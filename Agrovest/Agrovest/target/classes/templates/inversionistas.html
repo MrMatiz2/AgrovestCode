@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{default}">
+
+    <head>
+        <title>Inversionistas</title>
+        <link rel="stylesheet" href="/css/style.css"/>
+    </head>
+
+    <body>
+        <div layout:fragment="content" class="container-lg">
+            <div class="col-xs-8 col-md-8">
+                <h2>Inversionistas registrados</h2>
+                <div class="table-responsive">
+
+                    <table class="table" id="product-table">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Correo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <tr th:each="user : ${users}">
+                            <td th:text="${user.fullname}"></td>
+                            <td th:text="${user.email}"></td>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

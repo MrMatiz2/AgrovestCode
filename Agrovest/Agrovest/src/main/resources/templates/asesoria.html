@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{default}">
+
+    <head>
+        <title>Asesoría</title>
+        <link rel="stylesheet" href="/css/style.css" />
+    </head>
+
+    <body>
+        <div class="container-lg" layout:fragment="content" >
+
+            <div class="row">
+
+                <div class="col-sm-8">
+
+                    <div th:if="${user}">
+                        <a href="/crear" class="btn btn-info float-right">Crear Asesoría</a>
+                    </div>
+
+                    <h2>Asesorías</h2>
+                    <div class="table-responsive">
+                        <table class="table table-striped" id="product-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Asunto</th>
+                                    <th scope="col">Descripción</th>
+                                    <th scope="col">Respuesta del experto</th>
+                                    <th scope="col" th:if="${adminRole}">Nombre Inversor</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                <!--- La condición se replica en cada etiqueta --->
+
+                                <tr th:each="asesoria : ${asesorias}" th:if="${asesoria.userId == userId}">
+                                    <td><a th:text="${asesoria.asunto}" th:href="@{'/mostrar/' + ${asesoria.id}}"></a></td>
+                                    <td th:text="${asesoria.descripcion}"></td>
+                                    <td th:text="${asesoria.respuesta}"></td>
+                                </tr>
+
+                                <tr th:each="asesoria : ${asesorias}" th:if="${adminRole}">
+                                    <td><a id="asesoriaId" th:text="${asesoria.asunto}" th:href="@{'/mostrar/' + ${asesoria.id}}"></a></td>
+                                    <td th:text="${asesoria.descripcion}"></td>
+                                    <td id="respuestaId" th:text="${asesoria.respuesta}"></td>
+                                    <td th:text="${asesoria.userName}"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div th:if="${user}" class="col-sm-4">
+
+                    <div class="card text-white bg-primary" style="margin-bottom:10px">
+                        <div class="card-header">Sistema asesorías</div>
+                        <div class="card-body">
+                            <p class="card-text">Pregunta tus dudas sobre el Plan de Negocio a los expertos. </br>En este apartado se guardan las asesorías que creaste, además de la correspondiente respuesta de los expertos a cada una de ellas. </p>
+                        </div>
+                    </div>
+
+                    <div class="card text-white bg-info cardDrop" style="margin-bottom:10px">
+                        <div class="card-header">¿Cómo puedo pedir una asesoría?</div>
+                        <div class="collapse cardCollapse">
+                            <div class="card-body" >
+                                <p class="card-text">Da clic en el botón 'Crear asesoría', rellena los campos de 'Asunto' y 'Descripción', guarda la asesoría.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div th:if="${!user}" class="col-sm-4">
+
+                    <div class="card text-white bg-danger mb-3" style="margin-bottom:10px">
+                        <div class="card-header">Asesorías inversores</div>
+                        <div class="card-body">
+                            <p class="card-text">Recuerda responder a las asesorías de los inversores</p>
+                        </div>
+                    </div>
+
+                    <div class="card text-white bg-dark mb-3" style="margin-bottom:10px">
+                        <div class="card-header">Control inversores</div>
+                        <div class="card-body">
+                            <p class="card-text">Lleva el control de los inversores registrados en la aplicación por medio del apartado de 'Inversionistas'</p>
+                        </div>
+                    </div>
+
+                    <div class="card text-white bg-primary mb-3" style="margin-bottom:10px">
+                        <div class="card-header">Plan de Negocio</div>
+                        <div class="card-body">
+                            <p class="card-text">Recuerda en la medida de lo posible actualizar el Plan de Negocio con información nueva para el inversor.</p>
+                        </div>
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </div>
+
+    </body>
+
+</html>

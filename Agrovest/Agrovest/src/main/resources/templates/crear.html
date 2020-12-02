@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{default}">
+
+    <head>
+        <title>Crear</title>
+        <link rel="stylesheet" href="/css/style.css" />
+    </head>
+
+    <body>
+        <div layout:fragment="content" class="container-lg">
+
+            <div class="row">
+
+                <div class="col-sm-8">
+                    <h2>Crear Asesoría</h2>
+                    <form action="/guardar">
+                        <div class="form-group">
+                            <label>Asunto:</label>
+                            <input required="" maxlength="100" type="text" class="form-control" name="asunto" />
+                        </div>
+
+                        <div class="form-group">
+                            <label>Descripcion:</label>
+                            <textarea required="" maxlength="500" class="form-control" name="descripcion" cols="60" rows="3"></textarea>
+                        </div>
+
+                        <div class="form-group">
+
+                            <div th:if="${userRole}">
+                                <input hidden type="button" value="Limpiar" onclick="javascript: limpiarCampo();" style="margin-bottom: 10px;">
+                            </div>
+
+                            <div th:if="${adminRole}">
+                                <textarea maxlength="500" id='output' class="form-control" name="respuesta" cols="60" rows="3"></textarea>
+                            </div>
+
+                            <div th:if="${userRole}">
+                                <textarea hidden id='output' class="form-control" name="respuesta" cols="60" rows="3"></textarea>
+                            </div>
+
+                        </div>
+                        <button type="submit" class="btn btn-success btn-block">Guardar</button>
+                    </form>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="card text-white bg-success cardDrop" style="margin-bottom:10px; margin-top:10px">
+                         <div class="card-header">Asesoría</div>
+                            <div class="collapse cardCollapse">
+                                <div class="card-body" >
+                                    <p class="card-text">Escribe al experto tus dudas sobre el Plan de Negocio. </br>En el campo 'Asunto' escribe de forma general tu duda, de esta forma el experto podrá identificar rapidamente que tema tratar. </br> En el campo 'Descripción' escribe de forma detallada tú pregunta, entre más específico seas mucho mejor.</p>
+                                 </div>
+                            </div>
+                    </div>
+                </div>
+             </div>
+        </div>
+    </body>
+
+</html>

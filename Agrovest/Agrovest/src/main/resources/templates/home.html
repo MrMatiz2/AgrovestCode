@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{default}">
+
+    <head>
+        <title>Agrovest</title>
+        <link rel="stylesheet" href="/css/style.css"/>
+
+    </head>
+
+    <body id="bootstrap-overrides">
+        <div layout:fragment="content">
+
+            <section id="banner">
+                <header>
+                    <h2>Agrovest: Una aplicación web para asesorar a inversores de Palma Aceitera Africana </h2>
+                    <a href="/login" class="button">Inicia sesión</a>
+                </header>
+            </section>
+
+            <section class="wrapper" style="padding-bottom: 5em; padding-top: 5em;">
+                <div class="container">
+                    <div style="text-align: center;" class="row">
+                        <section class="col-sm">
+
+                                <img src="/images/pencil.png" style="margin-bottom: 35px;" class="mx-auto d-block">
+                                <h3>Plan de negocio</h3>
+                                <p>Obten un Plan de Negocio actualizado y factible en el cual basar tu inversión.</p>
+
+                        </section>
+                        <section class="col-sm">
+
+                                <img src="/images/asesoria.png" style="margin-bottom: 35px;" class="mx-auto d-block">
+                                <h3>Asesoría</h3>
+                                <p>Pide asesorías a expertos en el área para obtener todos los detalles de cómo iniciar con tu inversión. </p>
+
+                        </section>
+                        <section class="col-sm">
+
+                                <img src="/images/palmera.png" style="margin-bottom: 35px;" class="mx-auto d-block">
+                                <h3>Beneficios</h3>
+                                <p>Evita perdidas monetarias y de tiempo al iniciar con tu inversión, al tener un plan claro y un asesor guía
+                                lograrás tu objetivo.
+                                </p>
+
+                        </section>
+
+
+                    </div>
+                </div>
+            </section>
+
+            <section id="cta" class="wrapper style3">
+                <div class="container">
+                    <header>
+                        <h2 style="font-size: 1.5rem;">¿Sin ideas de cómo invertir en Palma Aceitera Africana? Regístrate y te guíaremos</h2>
+                        <a href="/signup" class="button">Regístrate</a>
+                    </header>
+                </div>
+            </section>
+
+        </div>
+    </body>
+</html>

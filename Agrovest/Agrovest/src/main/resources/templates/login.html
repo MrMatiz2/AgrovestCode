@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{default}">
+
+    <head>
+        <title>Inicio sesión</title>
+        <link rel="stylesheet" href="/css/style.css" />
+    </head>
+
+    <body>
+        <div layout:fragment="content">
+
+            <div class="wrapper" style="padding: 8px 8px 8px 8px">
+
+                <form class="form-signin mx-auto" action="/login" method="post" style="max-width: 580px;">
+
+                        <h1 class="h3 mb-3 font-weight-normal" style="text-align: center;">Inicio de sesión</h1>
+
+                        <div th:if="${param.error}" class="mx-auto alert alert-danger" role="alert">
+                            Correo electrónico o contraseña inválidos.
+                        </div>
+
+                        <div th:if="${param.logout}" class="mx-auto alert alert-danger" role="alert">
+                            Se ha cerrado la sesión.
+                        </div>
+
+                        <div th:if="${userCreation}" class="mx-auto alert alert-success" role="alert">
+                            Se creó el usuario correctamente.
+                        </div>
+
+                        <div class="form-group mx-auto">
+                            <label for="inputEmail" class="sr-only" style="margin-top: 5px;">Email</label>
+                            <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email"
+                                required="" />
+                        </div>
+
+                        <div class="form-group mx-auto">
+                            <label for="inputPassword" class="sr-only">Contraseña</label>
+                            <input type="password" name="password" id="inputPassword" class="form-control"
+                                placeholder="Contraseña" required="" />
+                        </div>
+
+                        <div class="d-flex">
+                            <button type="submit" style="margin-bottom: 10px;" id="signButton"
+                                class="btn btn-primary btn-block">Iniciar sesión
+                            </button>
+                        </div>
+
+                    </form>
+
+                <form class="form-signin mx-auto" th:action="@{/signup}" method="get" style="max-width: 580px; ">
+                    <div class="d-flex">
+                        <button class="btn btn-success btn-block" type="Submit">Regístrese aquí</button>
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </body>
+</html>

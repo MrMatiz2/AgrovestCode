@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{default}">
+
+    <head>
+        <title>Requisitos</title>
+        <link rel="stylesheet" href="/css/style.css"/>
+    </head>
+
+    <body>
+        <div layout:fragment="content" class="container-lg">
+            <div id="planPart1">
+                <h1 style="font-size: 1.750em;margin-bottom: 1.5rem;">¿Cuáles son los requisitos para iniciar una plantación de Palma Aceitera? </h1>
+
+                <div class="accordion" id="accordionExample">
+                    <div role="tab" class="card">
+                        <div class="card-header" id="headingOne">
+                            <h2 class="mb-0">
+                                <button id="tierraButton" class="btn btn-link btn-block text-left " type="button" data-toggle="collapse" data-target="#collapseTierra" aria-expanded="true" aria-controls="collapseOne">
+                                    Tierra
+                                </button>
+                            </h2>
+                        </div>
+
+                        <div id="collapseTierra" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                            <div class="card-body">
+                                Puesto que usted está comenzando una plantación de palma de aceite, sin duda necesita una <strong>gran extensión de terreno.</strong> El primer factor importante a considerar al adquirir la tierra para su plantación de palma aceitera es el suelo. ¿Es fértil? ¿Sería conveniente para árboles de palma de aceite en crecimiento ? Si tiene dudas sobre la calidad del suelo, a continuación, <strong>haga que sea examinada por expertos.</strong> Además, ya que tu tierra será su fábrica de producción, debe estar ubicada donde los compradores pueden evaluar fácilmente. Aunque se pueden encontrar fácilmente las tierras con buenos suelos para el cultivo de palma de aceite, <strong>se debe elegir una de fácil acceso,</strong> ya que la mayoría de sus compradores usarán vehículos de gran tamaño para transportar frutas de la palma de aceite desde la granja hasta los sitios de procesamiento. Después de adquirir un pedazo de tierra, tendrá que prepararlo bien para la plantación. <strong>Es muy recomendable que utilice tractores para pulverizar y aflojar el suelo y quitar las raíces duras en preparación para la siembra de palma.</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingTwo">
+                            <h2 class="mb-0">
+                                <button id="trabajoButton" class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTrabajo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Trabajo
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapseTrabajo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                            <div class="card-body">
+                                Aunque es posible que no tenga que contratar personal permanente, tendrá que contratar a personas para ayudarle con cada etapa que implica iniciar una plantación de palma de aceite. Por ejemplo, usted tendrá que contratar a los trabajadores a un operador de tractor para el proceso de limpieza del terreno. También tendrá que contratar obreros para el proceso de plantación. Y cada vez que se necesita para la cosecha, tendrá que contratar obreros.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header" id="headingThree">
+                            <h2 class="mb-0">
+                                <button id="patrimonioButton" class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapsePatrimonio" aria-expanded="false" aria-controls="collapseThree">
+                                    El patrimonio
+                                </button>
+                            </h2>
+                        </div>
+                        <div id="collapsePatrimonio" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                            <div class="card-body">
+                                Esto se refiere al dinero que se requiere para iniciar el negocio. Esto incluye el costo de adquisición de tierras – ya sea mediante la compra o el alquiler, el costo de la contratación de trabajadores, el costo de mantenimiento de la finca, y el costo de la compra de las plantas de semillero que va a necesitar para empezar.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

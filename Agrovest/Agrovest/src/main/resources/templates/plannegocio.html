@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{default}">
+
+    <head>
+        <title>Bienvenida</title>
+        <link rel="stylesheet" href="/css/style.css" />
+    </head>
+
+    <body>
+        <div layout:fragment="content" class="container-lg">
+
+            <h1 style="font-size: 1.750em;" th:inline="text" th:text="${fullName}"></h1>
+            <p style="color:#999;font-size: 1.25em;" >Inicia inmediatamente en el negocio de plantación de Palma Aceitera  </p>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-header font-weight-bold">
+                            ¿Qué es el Plan de negocio?
+                        </div>
+<!--                        <img src="/images/banner3.jpg" class="card-img-top" alt="...">-->
+                        <div class="card-body">
+                            <p class="card-text">El Plan de Negocio es una guía que muestra los aspectos a tener un cuenta al momento de invertir en Palma Aceitera Africana, este está dividido por secciones y cuenta con información multimedia.</p>
+                            <p class="card-text">Recuerda que puedes preguntar a un experto en caso de tener dudas sobre el Plan de Negocio.</p>
+                            <a href="/asesoria" class="btn btn-primary">Asesoría</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-header font-weight-bold">
+                            Plan de negocio
+                        </div>
+                        <div class="card-body">
+                            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link active" id="pills-requisitos-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Requisitos</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" id="pills-preparacion-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Preparación tierra y semillas</a>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <a class="nav-link" id="pills-tiempo-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">Tiempo cosecha</a>
+                                </li>
+                            </ul>
+                            <div class="tab-content" id="pills-tabContent">
+                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                                    En este apartado se te mostrará los requisitos iniciales para iniciar la plantación de Palma Aceitera Africana.
+                                    <a style="margin-top: 10px" type="button" class="btn btn-success btn-block" id="planButton1" href="/requisitos">Requisitos</a>
+                                </div>
+                                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                    En este apartado se muestra las semillas que son requeridas para el cultivo, la preparación básica de la tierra y unas indicaciones para controlar la maleza.
+                                    <a style="margin-top: 10px" type="button" class="btn btn-success btn-block" id="planButton2" href="/tierra">Preparación</a>
+                                </div>
+                                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                                    Su primera cosecha será de alrededor de dos años después de la plantación de plántulas. Por lo tanto, si usted tiene la capital y otras necesidades, ahora es el mejor momento para invertir en su futuro iniciando un negocio de plantación de palma de aceite.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            </br>
+
+            <div class="card">
+                <div class="card-header font-weight-bold">
+                    Cosecha
+                </div>
+                <div class="card-body">
+                    <p class="card-text">Cuando es el momento de la cosecha, se va a vender sus frutas de palma a los fabricantes, que procesarían los frutos para producir aceite de palma roja. Después de la cosecha y la venta, se debe esperar hasta la próxima temporada de cosecha para vender de nuevo. Esto puede continuar durante décadas, lo que significa una plantación de palma de aceite puede continuar y obtener grandes ingresos durante varios años.</p>
+                </div>
+            </div>
+
+        </div>
+    </body>
+
+</html>

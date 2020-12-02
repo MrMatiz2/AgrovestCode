@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{default}">
+
+    <head>
+        <title>Panel</title>
+        <link rel="stylesheet" href="/css/style.css"/>
+    </head>
+
+    <body>
+        <div layout:fragment="content" class="container-lg">
+
+            <h1 th:inline="text" th:text="${fullName}"></h1>
+
+            <p style="color:#999;font-size: 1.25em;" >Este es tu perfil de Administrador </p>
+            <p style="color:#999;font-size: 1.25em;">Responde a las inquietudes de los inversores en el apartado de <a href="/asesoria">Asesoría</a></p>
+            <p style="color:#999;font-size: 1.25em;">Lleva un control de las personas registradas en la aplicación en el apartado <a href="/inversionistas">Inversionistas</a></p>
+
+        </div>
+    </body>
+
+</html>

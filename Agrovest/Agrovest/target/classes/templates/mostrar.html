@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+    xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{default}">
+
+    <head>
+        <title>Mostrar</title>
+        <link rel="stylesheet" href="/css/style.css" />
+    </head>
+
+    <body>
+        <div layout:fragment="content" class="container-lg">
+
+            <div class="col-xs-8 col-md-8">
+                <h2 th:text="${asesoria.asunto}"></h2>
+
+                <dl class="list">
+                    <dt>Descripción</dt>
+                    <dd th:text="${asesoria.descripcion}"></dd>
+                    <dt>Respuesta</dt>
+                    <dd id="respuestaId"th:text="${asesoria.respuesta}"></dd>
+                </dl>
+            </div>
+
+            <div class="container">
+                <form action="/eliminar">
+                    <input type="hidden" name="id" th:value="${asesoria.id}" />
+                    <div class="row">
+                        <div class="col">
+                            <h2><input type="submit" class="btn btn-danger btn-block" value="Eliminar" onclick="return confirm('¿Estás seguro de eliminar esta asesoría?');" /></h2>
+                        </div>
+
+                        <div class="col">
+                            <a th:if="${adminRole}" type="button" id="responderButton"th:href="@{'/editar/' + ${asesoria.id}}" class="btn btn-warning btn-block">Responder</a><h2>
+                            <a th:if="${userRole}" type="button" th:href="@{'/editar/' + ${asesoria.id}}" class="btn btn-warning btn-block">Editar</a></h2>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </body>
+
+</html>
